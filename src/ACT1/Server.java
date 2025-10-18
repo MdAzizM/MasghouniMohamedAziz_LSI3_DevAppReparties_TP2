@@ -1,10 +1,12 @@
 package ACT1;
-// C'EST LE SOURCE CODE DE SERVER MAIS DANS UN AUTRE MACHINE VIRTUELLE QUE LE CLIENT
 import java.io.*;
 import java.net.*;
 import java.util.regex.Pattern;
+import ACT1.Validator;
 
 import static ACT1.Validator.searchOP;
+
+//import static ACT1.Validator.searchOP;
 
 public class Server {
     public static int[] transform(String req){
@@ -25,14 +27,14 @@ public class Server {
             System.out.println("server online on "+port);
             while (true) {
                 Socket socketClient = serveur.accept();
-                System.out.println("New Client connected!");
+                System.out.println("New Client1 connected!");
 
                 //declaring variables
                 PrintWriter os = new PrintWriter(socketClient.getOutputStream(), true);
                 BufferedReader is = new BufferedReader(new InputStreamReader(socketClient.getInputStream()));
 
                 String req = is.readLine();
-                System.out.println("Printing Client Request: " + req);
+                System.out.println("Printing Client1 Request: " + req);
 
                 //refining the request
                 char op = searchOP(req);

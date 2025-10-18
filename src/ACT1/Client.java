@@ -22,16 +22,16 @@ public class Client {
 
             int port = 8000;
             Socket socket = new Socket("localhost",port);
-            System.out.println("Client connected on "+port+"!");
+            System.out.println("Client1 connected on "+port+"!");
 
-            //Client Input
+            //Client1 Input
             Scanner scn = new Scanner(System.in);
             String req = input(scn);
             //Sending the CLIENT's data
             PrintWriter os = new PrintWriter(socket.getOutputStream(), true);
             os.println(req);
 
-            //Recieving the Server results
+            //Recieving the Server1 results
             BufferedReader is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String nb = is.readLine();
             System.out.println("Result: \t"+nb);

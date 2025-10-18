@@ -12,10 +12,10 @@ public class Client1 {
         int num1 = scn.nextInt();
         System.out.println("put numbers: ");
         int num2 = scn.nextInt();
-
+        System.out.println("put ur operator: ");
         String chr = scn.next();
         char op = chr.charAt(0);
-        if (opValid(op)) {System.out.println("error, OP is not valide");}
+        if (!opValid(op)) {System.out.println("error, OP is not valide");}
     return new Oper(num1, num2, op);
     }
     public static void main(String[] args) {

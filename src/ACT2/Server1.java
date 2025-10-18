@@ -18,14 +18,17 @@ public class Server1 {
 
             // Receive the object
             Oper op = (Oper) in.readObject();
-
+            System.out.println("request from the client:"+op.getNum1()+", "+op.getNum2()+", "+op.getOperator());
             // Perform the calculation
+            System.out.println("Calculating...!");
             int result = calculate(op.getNum1(), op.getNum2(), op.getOperator());
-
+            System.out.println("Calculation results: [ "+result+" ]");
             // Send result back to client
+            System.out.println("Sending results to client...!");
             out.writeInt(result);
             out.flush();
 
+            System.out.println("Operation ended successfully, Connection closed!");
             clientSocket.close();
 
         } catch (IOException | ClassNotFoundException e) {

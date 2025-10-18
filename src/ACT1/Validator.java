@@ -64,7 +64,7 @@ public class Validator {
             return true;
         }
     }
-    public static boolean valide( String req){
+    public static boolean valide(String req){
         if (syntaxe(req)){
             System.out.println("****Syntaxe is correct****\n|||checking form|||");
             if (form(req)){
